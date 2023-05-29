@@ -1,4 +1,4 @@
-const fs = require("fs");
+import { writeFile } from "node:fs";
 
 let apiURL = process.env["URL"];
 let targetPath = `./src/environments/environment.ts`;
@@ -12,7 +12,7 @@ export const environment = {
   client_idsec: "${process.env["CLIENT_IDSEC"]}}"
 };`;
 
-fs.writeFile(targetPath, envConfigFile, function (err) {
+writeFile(targetPath, envConfigFile, function (err) {
   if (err) {
     console.log(err);
   }
