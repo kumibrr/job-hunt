@@ -8,10 +8,9 @@ export const environment = {
   production: false,
   url: "${apiURL}",
   client_id: "${process.env["CLIENT_ID"]}",
-  client_secret: "${process.env["CLIENT_SECRET"]}"
+  client_secret: "${process.env["CLIENT_SECRET"]}",
+  client_idsec: "${process.env["CLIENT_IDSEC"]}}"
 };`;
-
-console.log(process.env["CLIENT_ID"], ";", process.env["CLIENT_SECRET"]);
 
 fs.writeFile(targetPath, envConfigFile, function (err) {
   if (err) {
