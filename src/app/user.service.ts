@@ -23,7 +23,7 @@ export class UserService {
       headers: {
         Host: '',
         Authorization: `Basic ${btoa(
-          `${proccess.env.CLIENT_ID};${process.env.CLIENT_SECRET}`
+          `${process.env['CLIENT_ID']};${process.env['CLIENT_SECRET']}`
         )}`,
       },
     });
