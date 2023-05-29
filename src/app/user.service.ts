@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 export interface User {
   id: number;
@@ -23,7 +24,7 @@ export class UserService {
       headers: {
         Host: '',
         Authorization: `Basic ${btoa(
-          `${process.env['CLIENT_ID']};${process.env['CLIENT_SECRET']}`
+          `${environment.client_id};${environment.client_secret}`
         )}`,
       },
     });
