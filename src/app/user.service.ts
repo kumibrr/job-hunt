@@ -19,6 +19,13 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   signIn() {
-    return this.http.get<User>('https://api.infojobs.net/api/6/candidate');
+    return this.http.get<User>('https://api.infojobs.net/api/6/candidate', {
+      headers: {
+        Host: '',
+        Authorization: `Basic ${btoa(
+          `${proccess.env.CLIENT_ID};${process.env.CLIENT_SECRET}`
+        )}`,
+      },
+    });
   }
 }
