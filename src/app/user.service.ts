@@ -6,7 +6,7 @@ export interface User {
   id: number;
   key: string;
   hasPhoto: true;
-  photo: 'https://www.infojobs.net/candidato.foto?id_candidato=eecd09b6-0cd1-4d22-bbea-70ee5aa57e10';
+  photo: string;
   name: string;
   surname1: string;
   surname2: string;
@@ -20,12 +20,16 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   signIn() {
-    return this.http.get<User>('https://api.infojobs.net/api/6/candidate', {
-      headers: {
-        Authorization: `Basic ${window.btoa(
-          `${environment.client_id}:${environment.client_secret}`
-        )}`,
-      },
-    });
+    return this.http.post<User>(
+      'http://localhost:3000/api/proxy',
+      { url: '/6/candidate' },
+      {
+        headers: {
+          Authorization: `Basic ${window.btoa(
+            `${environment.client_id}:${environment.client_secret}`
+          )}`,
+        },
+      }
+    );
   }
 }
