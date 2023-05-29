@@ -11,6 +11,8 @@ export const environment = {
   client_secret: "${process.env["CLIENT_SECRET"]}"
 };`;
 
+console.log(process.env["CLIENT_ID"], ";", process.env["CLIENT_SECRET"]);
+
 fs.writeFile(targetPath, envConfigFile, function (err) {
   if (err) {
     console.log(err);
