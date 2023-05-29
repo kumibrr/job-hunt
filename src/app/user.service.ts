@@ -22,7 +22,9 @@ export class UserService {
   signIn() {
     return this.http.get<User>('https://api.infojobs.net/api/6/candidate', {
       headers: {
-        Authorization: `Basic ${environment.client_idsec}`,
+        Authorization: `Basic ${window.btoa(
+          `${environment.client_id};${environment.client_secret}`
+        )}`,
       },
     });
   }
