@@ -1,5 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-ExtraBoldItalic.woff2") format("woff2"),
+    url("assets/fonts/Montserrat-ExtraBoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
 
 :root {
   color-scheme: dark light;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
