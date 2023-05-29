@@ -21,7 +21,7 @@ export class UserService {
 
   signIn() {
     return this.http.post<User>(
-      'http://localhost:3000/api/proxy',
+      `${environment.url}/api/proxy`,
       { url: '/6/candidate' },
       {
         headers: {
