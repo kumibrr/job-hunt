@@ -13,4 +13,11 @@ export const routes: Routes = [
         (m) => m.CreateHuntComponent
       ),
   },
+  {
+    path: 'list',
+    loadComponent: () =>
+      import('./hunt-list/hunt-list.component').then(
+        (m) => m.HuntListComponent
+      ),
+  },
 ];
