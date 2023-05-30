@@ -11,11 +11,12 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { tap } from 'rxjs';
 import { HuntsService } from '../hunts.service';
 import { DateTime } from 'luxon';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-create-hunt',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, HeaderComponent],
   templateUrl: './create-hunt.component.html',
   styleUrls: ['./create-hunt.component.css'],
   animations: [
