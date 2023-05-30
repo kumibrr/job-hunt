@@ -1,16 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { of } from 'rxjs';
 
 export interface User {
   id: number;
   key: string;
-  hasPhoto: true;
-  photo: string;
+  photo?: string;
   name: string;
   surname1: string;
-  surname2: string;
-  validatedMail: 1;
 }
 
 @Injectable({
@@ -20,16 +17,11 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   signIn() {
-    return this.http.post<User>(
-      `${environment.url}/api/proxy`,
-      { url: '/6/candidate' },
-      {
-        headers: {
-          Authorization: `Basic ${window.btoa(
-            `${environment.client_id}:${environment.client_secret}`
-          )}`,
-        },
-      }
-    );
+    return of<User>({
+      id: 123,
+      key: '46d899kf-6b23-a2ee-b875-c8682cab231s',
+      name: 'Miguel Ángel',
+      surname1: 'Durán',
+    });
   }
 }
