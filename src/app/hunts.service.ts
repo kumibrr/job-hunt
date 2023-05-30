@@ -15,7 +15,15 @@ export interface Hunt {
   providedIn: 'root',
 })
 export class HuntsService {
-  hunts$: Observable<Hunt[]> = of([]);
+  hunts$: Observable<Hunt[]> = of([
+    {
+      id: 123,
+      startDate: DateTime.fromISO('2023-05-14'),
+      finished: true,
+      endDate: DateTime.fromISO('2023-05-30'),
+      name: 'test',
+    },
+  ]);
 
   // private saveHunts = forkJoin([this.userService.user$, this.hunts$]).subscribe(
   //   ([user, hunts]) => {

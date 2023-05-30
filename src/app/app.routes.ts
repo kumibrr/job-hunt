@@ -20,4 +20,9 @@ export const routes: Routes = [
         (m) => m.HuntListComponent
       ),
   },
+  {
+    path: 'detail/:id',
+    loadComponent: () =>
+      import('./detail/detail.component').then((m) => m.DetailComponent),
+  },
 ];
