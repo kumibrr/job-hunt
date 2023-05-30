@@ -10,6 +10,7 @@ import {
 import { animate, style, transition, trigger } from '@angular/animations';
 import { tap } from 'rxjs';
 import { HuntsService } from '../hunts.service';
+import { DateTime } from 'luxon';
 
 @Component({
   selector: 'app-create-hunt',
@@ -30,9 +31,10 @@ export class CreateHuntComponent {
   huntService = inject(HuntsService);
 
   form = new FormGroup({
-    start: new FormControl<Date | null>(null, [Validators.required]),
+    start: new FormControl<string | null>(null, [Validators.required]),
     finished: new FormControl<boolean | null>(null, Validators.required),
-    end: new FormControl<Date | null>(null, [Validators.required]),
+    end: new FormControl<string | null>(null, [Validators.required]),
+    name: new FormControl<string>('', Validators.required),
   });
 
   finished$ = this.form.controls.finished.valueChanges.pipe(
@@ -40,13 +42,14 @@ export class CreateHuntComponent {
   );
 
   submit() {
-    const { end, finished, start } = this.form.value;
-    if (end && finished && start) {
+    const { end, finished, start, name } = this.form.value;
+    if (typeof finished === 'boolean') {
       this.huntService.addHunt({
         id: new Date().getMilliseconds(),
-        endDate: new Date(end),
+        name: name!,
+        endDate: end ? DateTime.fromISO(end) : undefined,
         finished: finished,
-        startDate: new Date(start),
+        startDate: DateTime.fromISO(start!),
       });
     }
   }
