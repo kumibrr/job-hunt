@@ -1,0 +1,65 @@
+<div class="header">
+  <h1><span class="job">Job</span><span class="hunt">Hunt</span></h1>
+  <nav>
+    <a href="/">Mis cazas</a><a href="/">Crear caza</a
+    ><a href="/">Cerrar sesión</a>
+  </nav>
+</div>
+<section>
+  <form action="submit" [formGroup]="form">
+    <div class="formStep">
+      <label for="start"
+        >Escoge la fecha en la que <strong>comenzó</strong> la cacería:</label
+      >
+      <input formControlName="start" type="date" name="start" id="start" />
+    </div>
+    <div
+      class="formStep"
+      *ngIf="form.controls.start.dirty === true"
+      @inAnimation
+    >
+      <label for="finished">¿Ha <strong>acabado</strong> tu cacería?</label>
+      <div role="radiogroup">
+        <input
+          formControlName="finished"
+          type="radio"
+          name="finished"
+          id="finished-yes"
+          [value]="true"
+        />
+        Sí
+        <input
+          formControlName="finished"
+          type="radio"
+          name="finished"
+          id="finished-no"
+          [value]="false"
+        />No
+      </div>
+    </div>
+    <div
+      class="formStep"
+      *ngIf="
+        form.controls.finished.dirty === true &&
+        form.controls.finished.value === true
+      "
+      @inAnimation
+    >
+      <label for="end"
+        >Escoge la fecha en la que <strong>terminó</strong> la cacería:</label
+      >
+      <input formControlName="end" type="date" name="end" id="end" />
+    </div>
+    <div
+      class="formStep"
+      *ngIf="
+        form.controls.end.dirty === true ||
+        form.controls.finished.value === false
+      "
+      @inAnimation
+    >
+      <button>Continuar</button>
+    </div>
+  </form>
+</section>
+<ng-container *ngIf="finished$ | async"></ng-container>

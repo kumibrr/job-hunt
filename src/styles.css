@@ -12,3 +12,8 @@
   color-scheme: dark light;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
+input {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 5px;
+}

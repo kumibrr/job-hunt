@@ -1,0 +1,78 @@
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  font-size: x-large;
+}
+
+form .formStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form .formStep * {
+  margin: 1vh;
+}
+
+h1 {
+  font-family: "Montserrat";
+}
+
+h1,
+h2 {
+  display: flex;
+  align-items: baseline;
+  margin: 0;
+  margin-right: 40vw;
+}
+
+.job {
+  font-size: 3rem;
+}
+
+.hunt {
+  font-size: 2rem;
+}
+
+a {
+  font-size: larger;
+  color: #fabada;
+  text-decoration: none;
+  transition: color 1500ms ease;
+}
+
+a:hover {
+  color: brown;
+}
+
+strong {
+  margin: 0 !important;
+  color: brown;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  border-bottom: 1px solid #ccc;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.formStep {
+  transition: all 1s;
+}
+
+button {
+  padding: 5px;
+  border-radius: 2px;
+  font-size: large;
+}

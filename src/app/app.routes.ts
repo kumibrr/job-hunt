@@ -6,4 +6,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./landing/landing.component').then((m) => m.LandingComponent),
   },
+  {
+    path: 'create-hunt',
+    loadComponent: () =>
+      import('./create-hunt/create-hunt.component').then(
+        (m) => m.CreateHuntComponent
+      ),
+  },
 ];
