@@ -6,7 +6,7 @@
   </nav>
 </div>
 <section>
-  <form action="submit" [formGroup]="form">
+  <form action="submit" [formGroup]="form" (ngSubmit)="submit()">
     <div class="formStep">
       <label for="start"
         >Escoge la fecha en la que <strong>comenzó</strong> la cacería:</label
@@ -58,7 +58,7 @@
       "
       @inAnimation
     >
-      <button>Continuar</button>
+      <input type="submit" value="Continuar" />
     </div>
   </form>
 </section>

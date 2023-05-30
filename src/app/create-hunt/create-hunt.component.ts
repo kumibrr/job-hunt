@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormControl,
@@ -9,6 +9,7 @@ import {
 } from '@angular/forms';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { tap } from 'rxjs';
+import { HuntsService } from '../hunts.service';
 
 @Component({
   selector: 'app-create-hunt',
@@ -26,13 +27,27 @@ import { tap } from 'rxjs';
   ],
 })
 export class CreateHuntComponent {
+  huntService = inject(HuntsService);
+
   form = new FormGroup({
     start: new FormControl<Date | null>(null, [Validators.required]),
-    finished: new FormControl<Boolean | null>(null, Validators.required),
+    finished: new FormControl<boolean | null>(null, Validators.required),
     end: new FormControl<Date | null>(null, [Validators.required]),
   });
 
   finished$ = this.form.controls.finished.valueChanges.pipe(
     tap(() => this.form.controls.end.reset())
   );
+
+  submit() {
+    const { end, finished, start } = this.form.value;
+    if (end && finished && start) {
+      this.huntService.addHunt({
+        id: new Date().getMilliseconds(),
+        endDate: new Date(end),
+        finished: finished,
+        startDate: new Date(start),
+      });
+    }
+  }
 }
