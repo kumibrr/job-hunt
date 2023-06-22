@@ -1,2 +1,9 @@
 <app-header></app-header>
 <p *ngIf="hunt$ | async as hunt">detail works! {{ hunt | json }}</p>
+<p *ngIf="applications$ | async as application">{{ application | json }}</p>
+
+<section>
+  <div class="canvas-holder">
+    <canvas #ctx id="chart-area"></canvas>
+  </div>
+</section>
