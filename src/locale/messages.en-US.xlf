@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es-ES" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="1284673125459251313" datatype="html">
+        <source> Inicia sesión con <x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/Logo-min.png&quot; alt=&quot;InfoJobs&quot; /&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/landing/landing.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1045219773465933142" datatype="html">
+        <source>&quot;Caza&quot; tu próximo empleo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/landing/landing.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8381693634533178000" datatype="html">
+        <source>observando visualmente tu progreso</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/landing/landing.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2533417926145648032" datatype="html">
+        <source>Herramienta creada por <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://github.com/kumibrr&quot;&gt;"/>@kumibrr<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/landing/landing.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5643544092572281702" datatype="html">
+        <source>para la hackaton de midudev e InfoJobs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/landing/landing.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -5,6 +5,10 @@
   "projects": {
     "job-hunt": {
       "projectType": "application",
+      "i18n": {
+        "sourceLocale": "es-ES",
+        "locales": { "en-US": "src/locale/messages.en.xlf" }
+      },
       "schematics": {
         "@schematics/angular:component": {
           "standalone": true
@@ -23,6 +27,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser-esbuild",
           "options": {
+            "localize": ["en-US"],
             "outputPath": "dist/job-hunt",
             "index": "src/index.html",
             "main": "src/main.ts",
